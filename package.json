@@ -1,0 +1,27 @@
+{
+  "name": "test-pair-checker",
+  "version": "1.0.0",
+  "description": "This checks corresponding test file existance based on those names.",
+  "main": "./dist/bin.js",
+  "type": "module",
+  "bin": "./dist/bin.js",
+  "scripts": {
+    "build": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "i2i3i",
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^10.3.10"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/node": "^20.10.4",
+    "rollup": "^4.7.0",
+    "rollup-plugin-node-externals": "^6.1.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}
