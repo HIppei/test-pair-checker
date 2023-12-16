@@ -6,9 +6,9 @@ const plugins = [typescript(), nodeExternals(), terser({ format: { comments: fal
 
 /** @type {import('rollup').RollupOptions} */
 const cliConfig = {
-  input: 'src/bin.ts',
+  input: 'src/index.ts',
   output: {
-    dir: 'dist',
+    dir: 'dist/bin',
     strict: true,
   },
   plugins,

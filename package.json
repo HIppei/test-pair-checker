@@ -2,9 +2,11 @@
   "name": "test-pair-checker",
   "version": "1.0.0",
   "description": "This checks corresponding test file existance based on those names.",
-  "main": "./dist/bin.js",
+  "main": "./dist/bin/index.js",
   "type": "module",
-  "bin": "./dist/bin.js",
+  "bin": {
+    "pair-check": "./dist/bin/index.js"
+  },
   "scripts": {
     "build": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
