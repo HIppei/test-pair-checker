@@ -2,7 +2,16 @@ import typescript from '@rollup/plugin-typescript';
 import nodeExternals from 'rollup-plugin-node-externals';
 import terser from '@rollup/plugin-terser';
 
-const plugins = [typescript(), nodeExternals(), terser({ format: { comments: false } })];
+const plugins = [
+  // This helps Rollup understands typescript.
+  typescript(),
+
+  // This excludes packages under peer-dep, dep and built-in node modules.
+  nodeExternals(),
+
+  // This minifies bundled file to eliminate empty line and comments.
+  terser({ format: { comments: false } }),
+];
 
 /** @type {import('rollup').RollupOptions} */
 const cliConfig = {
@@ -14,7 +23,7 @@ const cliConfig = {
   plugins,
 };
 
-export default [cliConfig];
+export default cliConfig;
 
 // const input = 'src/test-pair-checker.ts';
 // /** @type {import('rollup').RollupOptions} */
@@ -39,3 +48,5 @@ export default [cliConfig];
 //   },
 //   plugins,
 // };
+
+// export default [cliConfig, esmConfig, cjsConfig]

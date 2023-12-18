@@ -1,7 +1,21 @@
 import { globSync } from 'glob';
-import { basename, parse } from 'path';
+import { basename } from 'path';
 import { cwd } from 'process';
 
+/**
+ * This lists all files up based on parameters.
+ *
+ * @param targetDirs test target direcrtories
+ * @param ignorePatterns ignore patterns to exclude files from the targetDirs.
+ * @param testDir test target directories
+ *
+ * @returns
+ * targetFiles: test target files
+ * testFiles: test files
+ * found: Found test files correspoing to test target files
+ * notFound: No found test files correspoing to test target files
+ *
+ */
 export default function matcher({
   targetDirs,
   ignorePatterns,
@@ -14,7 +28,7 @@ export default function matcher({
   const targetFiles: string[] = [];
   // Listing up files under the target dirs.
   targetDirs.forEach((dir) =>
-    globSync(`${cwd()}/${dir}/**/*.{js,ts,jsx,tsx}`, {
+    globSync(`${cwd()}/**/${dir}/**/*.{js,ts,jsx,tsx}`, {
       ignore: [
         '**/__tests__/**/*.[jt]s?(x)',
         '**/tests/**/*.[jt]s?(x)',
@@ -27,7 +41,7 @@ export default function matcher({
   );
 
   // Listing up test files under the target test dir.
-  const testFiles = globSync(`${cwd()}/${testDir}/**/*.test.{js,ts,jsx,tsx}`).map((path) => basename(path));
+  const testFiles = globSync(`${cwd()}/**/${testDir}/**/*.test.{js,ts,jsx,tsx}`).map((path) => basename(path));
 
   const found: string[] = [];
   const notFound: string[] = [];
@@ -38,5 +52,5 @@ export default function matcher({
       : notFound.push(target);
   });
 
-  return { found, notFound, targetFiles, testFiles };
+  return { targetFiles, testFiles, found, notFound };
 }
