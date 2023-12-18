@@ -5,7 +5,7 @@
 
 /** @type {import('jest').Config} */
 const config = {
-  // All imported modules in your tests should be mocked automatically
+  // All imported modules in your tests should be mockedgautomatically
   // automock: false,
 
   // Stop running tests after `n` failures
@@ -110,7 +110,7 @@ const config = {
   // reporters: undefined,
 
   // Automatically reset mock state before every test
-  // resetMocks: false,
+  resetMocks: true,
 
   // Reset the module registry before running each individual test
   // resetModules: false,
@@ -119,7 +119,7 @@ const config = {
   // resolver: undefined,
 
   // Automatically restore mock state and implementation before every test
-  // restoreMocks: false,
+  restoreMocks: true,
 
   // The root directory that Jest should scan for tests and modules within
   // rootDir: undefined,
@@ -160,9 +160,8 @@ const config = {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  // testPathIgnorePatterns: ['/^\\d+$/'],
+  testPathIgnorePatterns: ["/\\b([0-9]|[1-9][0-9])\\b/"],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],

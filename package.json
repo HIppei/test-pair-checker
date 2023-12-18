@@ -12,8 +12,8 @@
   ],
   "scripts": {
     "build": "rollup -c -w",
-    "test": "jest",
-    "lint": "eslint --ext js,jsx,ts,tsx src",
+    "test": "jest --watch",
+    "lint": "eslint --ext js,jsx,ts,tsx src tests",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
