@@ -36,7 +36,7 @@ const config = {
 export default config;
 
 // Or cjs
-module.export = {
+module.exports = {
   targetDirs: [],
   ignorePatterns: [],
   testDir: "",
