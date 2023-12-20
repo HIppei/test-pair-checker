@@ -27,12 +27,10 @@ export function output({
   found: string[];
   notFound: string[];
 }) {
-  console.log("found", found);
-  console.log("notFound", notFound);
-
   console.log("------------------------------------------------------");
   console.log("The number of test target files", targetFiles.length);
-  console.log("The number of corresponding test files", testFiles.length);
+  console.log("The number of test files", testFiles.length);
+  console.log("The number of matched test files", found.length);
   console.log("------------------------------------------------------");
 
   if (notFound.length >= 1) {

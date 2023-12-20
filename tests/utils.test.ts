@@ -30,12 +30,13 @@ describe(output.name, () => {
   });
 
   test("output when not found files existing", () => {
+    const mockLog = jest.spyOn(console, "log");
     output({
       targetFiles: ["a"],
       testFiles: ["b"],
       found: ["c"],
       notFound: ["d"],
     });
-    expect(console.log).toHaveBeenLastCalledWith("\x1b[33m", "d");
+    expect(mockLog).toHaveBeenLastCalledWith("\x1b[33m", "d");
   });
 });

@@ -83,15 +83,13 @@ Execution results in the below.
 ```bash
 $ npm pair-check
 
-found [ 'custom-button.tsx' ]
-notFound [ 'custom-input.tsx' ]
 ------------------------------------------------------
 The number of test target files 2
-The number of corresponding test files 1
+The number of test files 2
+The number of matched test files 1
 ------------------------------------------------------
 You must implement corresponding test files for the following files.
  custom-input.tsx
-
 ```
 
 ## Contributing
