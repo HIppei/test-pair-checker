@@ -1,6 +1,6 @@
 {
   "name": "@i2i3i/test-pair-checker",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "This checks corresponding test file existance based on those names.",
   "main": "./dist/bin/index.js",
   "type": "module",

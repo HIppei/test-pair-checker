@@ -32,7 +32,7 @@ const config = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
+  coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -101,7 +101,7 @@ const config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: "ts-jest",
+  preset: 'ts-jest',
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -161,7 +161,7 @@ const config = {
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: ['/^\\d+$/'],
-  testPathIgnorePatterns: ["/\\b([0-9]|[1-9][0-9])\\b/"],
+  testPathIgnorePatterns: ['/\\d+/'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
