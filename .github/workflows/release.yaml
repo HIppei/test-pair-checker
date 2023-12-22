@@ -19,7 +19,7 @@ jobs:
           version: 8.7.5
       - run: pnpm i --frozen-lockfile
       - run: pnpm test-all
-      - run: pnpm build:watch
+      - run: pnpm build
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
