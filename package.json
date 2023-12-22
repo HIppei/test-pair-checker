@@ -1,6 +1,6 @@
 {
   "name": "@i2i3i/test-pair-checker",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "This checks corresponding test file existance based on those names.",
   "main": "./dist/bin/index.js",
   "type": "module",
@@ -11,8 +11,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c -w",
-    "test": "jest --watch",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "test": "jest --watch -o",
+    "test-all": "jest",
     "lint": "eslint --ext js,jsx,ts,tsx src tests",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
